@@ -212,10 +212,10 @@ function defaultLabels($id, $name, string $projectName, string $resourceName, st
     $labels->push('coolify.'.$type.'Id='.$id);
     $labels->push("coolify.type=$type");
     $labels->push('coolify.name='.$name);
-    $labels->push('coolify.resourceName='.Str::slug($resourceName));
-    $labels->push('coolify.projectName='.Str::slug($projectName));
-    $labels->push('coolify.serviceName='.Str::slug($subName ?? $resourceName));
-    $labels->push('coolify.environmentName='.Str::slug($environment));
+    $labels->push('coolify.resourceName='.$resourceName);
+    $labels->push('coolify.projectName='.$projectName);
+    $labels->push('coolify.serviceName='.($subName ?? $resourceName));
+    $labels->push('coolify.environmentName='.$environment);
 
     $labels->push('coolify.pullRequestId='.$pull_request_id);
     if ($type === 'service') {
